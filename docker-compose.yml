@@ -1,0 +1,10 @@
+version: '2'
+services:
+  taskScheduler:
+    image: rajarshi02/taskscheduler
+    ports:
+      - "8081:8081"
+  taskManager:
+    image: rajarshi02/taskmanager
+    ports:
+      - "8080:8080"
