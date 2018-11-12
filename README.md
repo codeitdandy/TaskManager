@@ -5,7 +5,7 @@ This Project demonstrates the use of Server Side Emits to produce an event strea
 
 # Getting Started
 Download/Clone the Repository into local workspace.
-Maven manages all dependencies, import the project as an Existing Maven Project in your favourite IDE and resolve Maven updates (if required) and build and run the project
+Maven manages all dependencies, import the project as an Existing Maven Project in your favourite IDE and resolve dependencies and Maven updates (if required) and build and run the project
 It can be built and run from the command line using mvn spring-boot:run
 It can also be run as a jar file , use maven goals like mvn package to create snapshot uber jars available in target folder
 
