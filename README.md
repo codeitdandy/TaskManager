@@ -1,7 +1,6 @@
 # TaskManager
 
-Project Title
-Task Manager : Spring Boot 2.0.6 Release Based Project to load tasks asynchronously into the front end while also providing REST based call API to consume tasks.
+Task Manager : Spring Boot 2.0.6 Release Based Simple Project to load tasks asynchronously into the front end while also providing REST based call API to consume tasks.
 This Project demonstrates the use of Server Side Emits to produce an event stream of text , instead of blocking calls of HTTP thread based cycle.
 
 # Getting Started
@@ -14,6 +13,19 @@ It can also be run as a jar file , use maven goals like mvn package to create sn
 IDE Supporting
 Maven tool installed as a command line option.
 PostgreSQL installed in local machine ( localhost exposing port 5432 user postgresql)
+
+# Test
+It provides a simple RESTful API with /tasks to fetch all the tasks aysnchronously.
+API is available at  http://localhost:8080/tasks. 
+Use either POSTMAN or Chrome Advanced REST Client or any of your favourite REST clients to fetch the tasks.
+
+# Security
+
+To demonstrate the security aspects and explore the Spring boot advancements in security, spring-boot starter security is used to secue the REST endpoints. It acts a simple HTTP basic authentication .(There is a maven dependency available to import for spring boot starter security)
+To keep things simple , HTTP basic authentication is demonstrated by allowing for the system generated Key value each time the TaskManager server starts. It is possible to create your own username and passwords along with authentication and authorization by writing wrappers around spring boot security configuration but has been left out in this project to demonstrate the concept.
+
+Use the following combination for basic authenticaton. (USER:user ,password: System generated Token available in the console , For eg: Check the console for Using generated security password: <8fbfbb1f-f312-45b5-8a97-ace73376c3a6>
+
 
 # Deployment
 Docker is being used as a mode of deploying. 
