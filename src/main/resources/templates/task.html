@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /*body {*/
+            /*background-color: #e6e0d9;*/
+        /*}*/
+
+        h4 {
+            color: blue;
+        }
+
+        .center {
+            text-align: center;
+            border: 3px solid green;
+        }
+
+        #task-table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #task-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        #task-table td, #task-tableth {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #task-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h4 style="text-align: center">PERIODIC TASK SCHEDULE DISPLAY SYSTEM</h4>
+    <div class="table-responsive">
+        <table class="table" id="task-table">
+            <thead>
+            <tr>
+                <th>CREATED_AT</th>
+                <th>UPDATED_AT</th>
+                <th>DUE_DATE</th>
+                <th>RESOLVED_AT</th>
+                <th>TILE</th>
+                <th>DESCRIPTION</th>
+                <th>PRIORITY</th>
+                <th>STATUS</th>
+                <th>ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<div id="book-list">-->
+            <!--</div>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    var evtSource = new EventSource("http://localhost:8080/tasks");
+    evtSource.onmessage = function (event) {
+        var data = JSON.parse(event.data);
+        
+      
+        var table = document.getElementById("task-table");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        
+        cell1.innerHTML = '<td>' + data.createdAt + '</td>';
+        cell2.innerHTML = '<td>' + data.updatedAt + '</td>';
+        cell3.innerHTML = '<td>' + data.dueDate + '</td>';
+        cell4.innerHTML =  '<td>' + data.resolvedDate + '</td>';
+        cell5.innerHTML =  '<td>' + data.title + '</td>';
+        cell6.innerHTML = '<td>' + data.description + '</td>';
+        cell7.innerHTML = '<td>' + data.priority + '</td>';
+        cell8.innerHTML = '<td>' + data.status + '</td>';
+        cell9.innerHTML = '<td>' + data.id + '</td>';
+
+    } 
+</script>
+
+</body>
+</html>
