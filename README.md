@@ -18,7 +18,7 @@ PostgreSQL installed in local machine ( localhost exposing port 5432 user postgr
 It provides a simple RESTful API with /tasks to fetch all the tasks aysnchronously.
 API is available at  http://localhost:8080/tasks. 
 Use either POSTMAN or Chrome Advanced REST Client or any of your favourite REST clients to fetch the tasks.
-https://www.getpostman.com/collections/c6b6507e642d32245154  <PostMan Collection Link>
+https://www.getpostman.com/collections/c6b6507e642d32245154    (PostMan Collection Link)
 
 # Security
 
